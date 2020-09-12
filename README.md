@@ -39,6 +39,7 @@
 |user_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
+- has many :comments
 
 ## commentsテーブル
 |Column|Type|Options|
@@ -48,6 +49,7 @@
 |user_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
+- belongs_to :tweets
 
 ## messagesテーブル
 |Column|Type|Options|
