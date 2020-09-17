@@ -1,0 +1,45 @@
+.SideBar
+  .LeftHeader
+    .LeftHeader__list
+      %p.LeftHeader__userName
+        Me
+        -# = current_user.name
+      .LeftHeader__icon
+        .LeftHeader__icon-edit
+        = link_to "#", class: "content_-btn contents__btn--edit" do
+          = icon('far', 'edit', class: "contents__btn--icon")
+        .LeftHeader__icon-cog
+        = link_to "#", class: "content_-btn contents__btn--cog" do
+          = icon('fas', 'cog', class: "contents__btn--icon")
+  .GroupList
+    -# - current_user.groups.each do |group|
+      .Groups
+        = link_to "#", class: "Group" do
+          %p.Group__name
+            = group.name
+          %p.Group__memberlist 
+            = @group.users.each do |user|
+            = user.name
+          %p.Group__message
+            = group.show_last_message
+
+-# .SideBar
+-#   .LeftHeader
+-#     .LeftHeader__list
+-#       %p.LeftHeader__userName
+-#         -# = current_user.name
+-#       .LeftHeader__icon
+-#         .LeftHeader__icon-edit
+-#         -# = link_to new_group_path, class: "content_-btn contents__btn--edit" do
+-#           = icon('far', 'edit', class: "contents__btn--icon")
+-#         .LeftHeader__icon-cog
+-#         -# = link_to edit_user_path(current_user), class: "content_-btn contents__btn--cog" do
+-#           = icon('fas', 'cog', class: "contents__btn--icon")
+-#   .GroupList
+-#     -# - current_user.groups.each do |group|
+-#       .Groups
+-#         -# = link_to group_messages_path(group), class: "Group" do
+-#           %p.Group__name
+-#             = group.name
+-#           %p.Group__message
+-#             = group.show_last_message
